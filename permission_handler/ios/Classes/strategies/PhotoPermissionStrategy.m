@@ -29,12 +29,12 @@
 }
 
 - (void)requestPermission:(PermissionGroup)permission completionHandler:(PermissionStatusHandler)completionHandler {
-    PermissionStatus status = [self checkPermissionStatus:permission];
+    //PermissionStatus status = [self checkPermissionStatus:permission];
 
-    if (status != PermissionStatusDenied) {
-        completionHandler(status);
-        return;
-    }
+    //if (status != PermissionStatusDenied) {
+    //    completionHandler(status);
+    //    return;
+    //}
 
     if(@available(iOS 14, *)) {
         [PHPhotoLibrary requestAuthorizationForAccessLevel:(addOnlyAccessLevel)?PHAccessLevelAddOnly:PHAccessLevelReadWrite handler:^(PHAuthorizationStatus authorizationStatus) {
